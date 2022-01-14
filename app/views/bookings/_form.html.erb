@@ -1,0 +1,9 @@
+<%= form_with(model: @booking, local: true) do |form| %>
+    <%= form.hidden_field :flight_id, value: params[:flight_id] %>
+    <% @passenger_number.times do %>
+      <%= form.fields_for :passengers do |passenger_form| %>
+        <%= passenger_form.text_field :name %>
+      <% end %>
+    <% end %>
+    <%= form.submit %>
+  <% end %>

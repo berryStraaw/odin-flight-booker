@@ -1,0 +1,18 @@
+
+
+<%= form_with url: "/flights", method: :get do |form| %>
+    <%=form.label :origin_id, "Origin" %>
+    <%= select_tag(:origin_id, options_for_select(@origin_options)) %>
+
+    <%=form.label :destination_id, "Destination" %>
+    <%= select_tag(:destination_id, options_for_select(@destination_options)) %>
+
+    <%=form.label :start_time, "Travel date" %>
+    <%= select_tag(:start_time, options_for_select(@flight_dates)) %>
+
+    <%=form.label :passenger_number, "Number of Passengers" %>
+    <%= form.select :passenger_number, ["1", "2", "3","4"] %>
+    
+    <%= form.submit "Search" %>
+<% end %>
+  

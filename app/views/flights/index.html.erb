@@ -1,0 +1,5 @@
+<%=render 'search_form' %>
+
+<% if @flight_options%>
+    <%=render 'flights', flights: @flight_options%>
+<% end %>

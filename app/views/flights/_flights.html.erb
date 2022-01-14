@@ -1,0 +1,9 @@
+<% flights.each do |flight| %>
+    flight origin
+    <%= flight.origin.city %>
+    flight destination
+    <%= flight.destination.city %>
+    flight date
+    <%= flight.start_time %>
+    <%= button_to 'Book Flight', new_booking_path,method: :get, params: {flight_id: flight.id, passenger_number: params[:passenger_number]}, id: 'booking_button' %>
+<% end %>
